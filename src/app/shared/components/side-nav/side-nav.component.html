@@ -1,0 +1,22 @@
+<mat-drawer-container class="side-nav-drawer-container">
+    <mat-drawer class="side-nav-drawer" #sideNav>
+        <ng-container>
+            <mat-nav-list>
+                <mat-list-item>
+                    <p>Login</p>
+                </mat-list-item>
+                <mat-list-item>
+                    <p>Register</p>
+                </mat-list-item>
+            </mat-nav-list>
+        </ng-container>
+    </mat-drawer>
+
+    <mat-drawer-content class="side-nav-drawer-content">
+        <ng-content>
+        </ng-content>
+
+        <footer>
+        </footer>
+    </mat-drawer-content>
+</mat-drawer-container>

@@ -1,0 +1,22 @@
+.side-nav-drawer-container {
+  min-height: 100vh;
+
+  .side-nav-drawer {
+    min-width: 320px;
+    margin-top: 64px;
+  }
+
+  .side-nav-drawer-content {
+    margin-top: 64px;
+  }
+}
+
+.oc-powered-by {
+  color: grey;
+  text-align: center;
+
+  .logo {
+    max-width: 96px;
+    vertical-align: middle;
+  }
+}

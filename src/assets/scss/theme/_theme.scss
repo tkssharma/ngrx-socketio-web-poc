@@ -1,0 +1,15 @@
+@import '~@angular/material/theming';
+@import 'colors';
+@include mat-core();
+
+// Apply custom material theme
+$app-mat-theme: mat-light-theme(
+  mat-palette($color-palette-primary),
+  mat-palette($color-palette-accent), 
+  mat-palette($color-palette-warning)
+);
+@include angular-material-theme($app-mat-theme);
+
+// Apply base mat-typography to <body>
+$app-mat-typo-config: mat-typography-config($font-family: 'Roboto, "Helvetica Neue", Arial, sans-serif');
+@include mat-base-typography($app-mat-typo-config, body);
