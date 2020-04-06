@@ -14,6 +14,10 @@ const routes: Routes = [
   {
     path: 'callback',
     component: CallbackComponent
+  },
+  {
+    path: 'poc-event-driven',
+    loadChildren: './pages/contacts/contacts.module#ContactsModule',
   }
 ];
 

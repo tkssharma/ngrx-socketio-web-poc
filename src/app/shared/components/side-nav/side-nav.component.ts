@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-side-nav',
@@ -10,13 +11,12 @@ export class SideNavComponent implements OnInit {
 
   @ViewChild('sideNav') sideNav: MatDrawer;
   
-  constructor() {
-   }
-  
+  constructor(private router: Router) {
+  }
   public toggleSidenav() {
     this.sideNav.toggle();
+     this.router.navigate(['./poc-event-driven']);
   }
-  
   ngOnInit() {
   }
 

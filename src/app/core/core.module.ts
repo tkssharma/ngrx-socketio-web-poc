@@ -5,8 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DatePipe } from '@angular/common';
-import { ApiService } from './api.service';
-import { UtilsService } from './utils.service';
+import { ApiService } from './services/api.service';
+import { UtilsService } from './services/utils.service';
 import { LoadingComponent } from './loading.component';
 
 @NgModule({
