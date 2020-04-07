@@ -7,13 +7,15 @@ import { AuthService } from '../../auth/auth.service';
   styleUrls: ['./callback.component.scss']
 })
 export class CallbackComponent implements OnInit {
-
+  public loading = true;;
   constructor(private auth: AuthService) {
     // Check for authentication and handle if hash present
     auth.handleAuth();
   }
-
   ngOnInit() {
+    setTimeout(() => {
+       this.loading = false;
+    }, 2000);
   }
 
 }

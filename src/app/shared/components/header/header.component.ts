@@ -17,7 +17,9 @@ export class HeaderComponent implements OnInit {
   public loginClicked(){
     this.auth.login();
   }
-
+  public logoutClicked(){
+    this.auth.logout();
+  }
   constructor(private auth: AuthService) { }
 
   ngOnInit(): void {

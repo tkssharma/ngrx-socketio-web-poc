@@ -1,9 +1,12 @@
-# Angular-9 App 
+# Angular-9 App for POC
 
 * [Node + npm](https://nodejs.org/)
 * [Angular CLI](https://cli.angular.io/) v6+
+* NgRx
+* WebSocket Client
+* Angular 9
+* Material Design
 * [Auth0 account](https://auth0.com) with [application](https://manage.auth0.com/#/applications)
-* [mLab](https://mlab.com) MongoDB database
 
 This repo is intended to be supplemental to the tutorials. Reference the tutorials for full implementation details.
 
@@ -27,23 +30,38 @@ $ npm run dev
 ```
 
 App available at `http://localhost:4200`.
-
 Server available at `http://localhost:8083/api`.
 
 ## Build (local)
 
 ```
-$ ng build --prod // client
-$ node server // server
+$ ng build --prod
 ```
 
-App and server both available on `http://localhost:8083`.
+### Different POCs
 
-## Deploy
+## 1. Event Driven UI using NgRx + Websocket + NestJS
 
-To deploy the app in this repo to a production environment, follow the instructions here: [Real-World Angular Series - Part 8](https://auth0.com/blog/real-world-angular-series-part-8/#deploy).
+#### Ngrx + Effects with a simple REST Service
 
-## What is Auth0?
+- This is basic example where we are getting data from http api calls 
+- write NgRx store/action/reducers and effects to deal with async calls 
+- HTTP calls will trigger action, effects and update store 
+- Angular components will get data from updates store data
+
+Now what if we add socket service in above picture, the change is now we have socket push events coming 
+from which we can get data, we just need socket client to connect and receive and send events to socket api server
+
+![image from https://github.com/avatsaev](./screens/arch-ng-rx.png)
+
+#### Ngrx + Effects with a simple REST and Socket Service 
+
+- NgRx will work same as it was just addition of another type of effects (web socket events)
+- Now with HTTP events we will also capture web socket events and get updated data
+
+![image from https://github.com/avatsaev](./screens/arch-ng-rx2.png)
+
+## 2. POC on using auth0 with Angular Client
 
 Auth0 helps you to:
 
