@@ -9,7 +9,11 @@ import { getUser } from '../ngrx';
 @Component({
   selector: 'app-loading',
   template: `
-    <img src="/assets/images/loading.svg">
+   <div>
+   Email : {{data?.email}} <br/>
+   Email : {{data?.given_name}} <br/>
+   Email : {{data?.name}} <br/>
+   </div>
   `,
   styles: [`
     :host {
@@ -23,13 +27,18 @@ import { getUser } from '../ngrx';
   `]
 })
 export class LoadingComponent  implements OnInit {
+  public data;
   constructor(private store: Store<fromRoot.State>) {}
   ngOnInit(): void {
     const data = localStorage.getItem('user');
     const UiUser = this.store.pipe(
       select(getUser)
     );
-    console.log(UiUser);
+    // tslint:disable-next-line: no-shadowed-variable
+    UiUser.subscribe((data1)=>{
+      this.data = data1;
+      console.log(data1);
+    });
     if (data) {
       const userData = JSON.parse(data);
       this.store.dispatch(setUser({payload: userData}));
