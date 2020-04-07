@@ -10,6 +10,8 @@
 
 This repo is intended to be supplemental to the tutorials. Reference the tutorials for full implementation details.
 
+### Blog https://tkssharma.com/event-driven-ui-using-angular-ngrx-and-websocket-Part-2/
+
 ## Install
 
 Clone this repository, then run:
