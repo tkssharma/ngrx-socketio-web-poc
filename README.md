@@ -25,26 +25,13 @@ $ npm install
 * Add your Auth0 and MongoDB credentials and remove `.SAMPLE` extension: `server/config.js.SAMPLE`
 * Add your Auth0 credentials and remove `.SAMPLE` extension: `src/app/auth/auth.config.ts.SAMPLE`
 
-## Development server
-
-```bash
-$ npm run dev
-```
-
-App available at `http://localhost:4200`.
-Server available at `http://localhost:8083/api`.
-
-## Build (local)
-
-```
-$ ng build --prod
-```
-
 ### Different POCs
 
 ## 1. Event Driven UI using NgRx + Websocket + NestJS
 
 #### Ngrx + Effects with a simple REST Service
+
+###  APIs https://github.com/tkssharma/ngrx-socketio-nestjs-apis-poc
 
 - This is basic example where we are getting data from http api calls 
 - write NgRx store/action/reducers and effects to deal with async calls 
