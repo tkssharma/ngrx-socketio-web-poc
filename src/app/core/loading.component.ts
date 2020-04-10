@@ -7,6 +7,7 @@ import { setUser } from '../ngrx/actions/ui-actions'
 import { getUser } from '../ngrx'
 import { MatSliderModule } from '@angular/material/slider'
 import { AuthService } from '@app/auth/auth.service'
+import { ApiService } from './services/api.service'
 
 @Component({
   selector: 'app-loading',
@@ -17,7 +18,8 @@ export class LoadingComponent implements OnInit {
   public data
   constructor(
     private store: Store<fromRoot.State>,
-    private _authservice: AuthService
+    private _authservice: AuthService,
+    private _apiservice: ApiService
   ) {}
   ngOnInit(): void {
     const data = localStorage.getItem('user')
@@ -34,5 +36,8 @@ export class LoadingComponent implements OnInit {
   logout() {
     this._authservice.logout()
   }
-  testAPI() {}
+  testAPI() {
+    this._apiservice.testAPIs$().subscribe((arg) => (this.data = arg))
+    // this is to test that token is being validated from Auth0
+  }
 }

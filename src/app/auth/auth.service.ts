@@ -11,8 +11,10 @@ export class AuthService {
   // Create Auth0 web auth instance
   private _auth0 = new auth0.WebAuth({
     clientID: AUTH_CONFIG.CLIENT_ID,
+    audience: AUTH_CONFIG.AUDIENCE, //the end bit was changed
     domain: AUTH_CONFIG.CLIENT_DOMAIN,
-    responseType: 'token',
+    issuer: AUTH_CONFIG.CLIENT_ID,
+    responseType: AUTH_CONFIG.RESPONSETYPE,
     redirectUri: AUTH_CONFIG.REDIRECT,
     scope: AUTH_CONFIG.SCOPE,
   })
