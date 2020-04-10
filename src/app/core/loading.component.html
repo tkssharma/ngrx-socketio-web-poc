@@ -1,0 +1,16 @@
+<mat-list>
+  <mat-list-item>Email : {{ data?.email }} </mat-list-item>
+  <mat-divider></mat-divider>
+  <mat-list-item> given Name : {{ data?.given_name }} </mat-list-item>
+  <mat-divider></mat-divider>
+  <mat-list-item> userName : {{ data?.name }} </mat-list-item>
+  <mat-divider></mat-divider>
+  <mat-list-item>
+    <button mat-raised-button color="primary" (click)="testAPI()">
+      Click Here API Auth0
+    </button>
+  </mat-list-item>
+  <mat-list-item>
+    <button mat-raised-button color="primary" (click)="logout()">logout</button>
+  </mat-list-item>
+</mat-list>
